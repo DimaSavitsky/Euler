@@ -6,6 +6,5 @@
   By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 =end
 
-fib = FibonacciGenerator.new
-puts fib.take_while {|s| s < 4000000 }.select {|s| s.even? }.reduce(:+)
+puts FibonacciSequenceGenerator.new.take_while {|s| s < 4000000 }.select(:even?).reduce(:+)
 
