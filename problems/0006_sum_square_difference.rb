@@ -11,8 +11,10 @@ Find the difference between the sum of the squares of the first one hundred natu
 HERE
 
 Problem.new(name: 'Sum Square Differences', number: 6, description: description ) do
+
   first_hundred =  NaturalSequenceGenerator.new.take(101)
   sum_of_squares = first_hundred.map {|a| a ** 2}.reduce(:+)
   square_of_sum = first_hundred.reduce(:+) ** 2
   (sum_of_squares - square_of_sum).abs
+
 end
