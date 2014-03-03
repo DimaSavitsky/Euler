@@ -10,6 +10,7 @@ class Problem
     def select(number)
       all_problems.find {|problem| problem.number == number }
     end
+    alias_method :find, :select
 
     def add_problem(problem)
       all_problems << problem
