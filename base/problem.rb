@@ -4,7 +4,7 @@ class Problem
   class << self
     def all_problems
       @problems_added ||= []
-      @problems_added.sort! {|a,b| a.number <=> b.number }
+      @problems_added.sort_by!(&:number)
     end
 
     def select(number)
@@ -26,10 +26,6 @@ class Problem
 
   def inspect
     "#< Problem #{ @number || '- without number -' } - #{ @name } >"
-  end
-
-  def view_source
-    @source
   end
 
 end
