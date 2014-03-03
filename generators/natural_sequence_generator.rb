@@ -1,4 +1,4 @@
-class NaturalSequenceGenerator
+class NaturalSequenceGenerator < AbstractSequenceGenerator
 
   def self.initialization_block
     Proc.new do |natural_integer|
