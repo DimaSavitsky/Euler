@@ -8,7 +8,7 @@ class Problem
     end
 
     def select(number)
-      all_problems.find {|problem| problem.number == number }
+      all.find {|problem| problem.number == number }
     end
     alias_method :find, :select
 
