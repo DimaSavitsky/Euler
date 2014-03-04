@@ -26,7 +26,17 @@ class Problem
   end
 
   def inspect
-    "#< Problem #{ @number || '- without number -' } - #{ @name } >"
+    "#< Problem #{ @number || '- without number -' } #{ @name } >"
+  end
+
+  def result
+    @result ||= solution
+  end
+
+  def measure_solution
+    Benchmark.measure do
+      @result = solution
+    end
   end
 
 end

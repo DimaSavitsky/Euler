@@ -12,7 +12,5 @@ using CountingIntegerLength
 using DeterminingPandigitalNumber
 
 Problem.new(name: 'Pandigital Fibonacci ends', number: 104, description: description) do
-  fib = FibonacciSequenceGenerator.new
-  fib = fib.drop_while {|integer| integer.length < 18 }
-  fib.find_index { |integer| integer.pandigital_ends? }
+  FibonacciSequenceGenerator.new.find_index { |integer| integer.pandigital_ends? }
 end

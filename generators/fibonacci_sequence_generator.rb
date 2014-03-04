@@ -2,11 +2,11 @@ class FibonacciSequenceGenerator < AbstractSequenceGenerator
 
   def self.initialization_block
     Proc.new do |fibonacci_integer|
-      first = 0
-      second = 1
+      old = 0
+      new = 1
       loop do
-        fibonacci_integer << first
-        first, second = second, first + second
+        fibonacci_integer << old
+        old, new = new, old + new
       end
     end
   end

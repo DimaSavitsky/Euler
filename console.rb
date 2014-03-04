@@ -1,4 +1,5 @@
 require 'irb'
+require 'benchmark'
 
 ['base', 'generators', 'refinements', 'problems'].each do |dir_name|
   Dir.open(dir_name).each do |file|

@@ -18,5 +18,11 @@ And select a specific problem and view it's result calling
 
 ```ruby
   problem = Problem.select(2)
-  problems.solution
+  problem.result
+```
+
+To measure time needed to produce a result call
+
+```ruby
+    problem.measure_solution
 ```
