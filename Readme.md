@@ -8,21 +8,21 @@ To start the console, enter
   ruby console.rb
 ```
 
-After that, you can list all completed problems by calling
+After that, you can list all implemented problems by calling
 
 ```ruby
-   Problem.all_problems
+   Problem.all
 ```
 
 And select a specific problem and view it's result calling
 
 ```ruby
-  problem = Problem.select(2)
+  problem = Problem.find(2)
   problem.result
 ```
 
 To measure time needed to produce a result call
 
 ```ruby
-    problem.measure_solution
+    problem.time
 ```

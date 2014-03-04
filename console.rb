@@ -8,4 +8,6 @@ require 'benchmark'
   end
 end
 
+ALERTER = ConsoleAlerter.new
+
 IRB.start
