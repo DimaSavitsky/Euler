@@ -8,7 +8,6 @@ description = <<-HERE
    AND the last nine digits are 1-9 pandigital, find k.
 HERE
 
-using CountingIntegerLength
 using DeterminingPandigitalNumber
 
 Problem.new(name: 'Pandigital Fibonacci ends', number: 104, description: description) do
