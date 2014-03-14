@@ -1,4 +1,4 @@
-require 'irb'
+require 'pry'
 require 'benchmark'
 
 ['base', 'generators', 'refinements', 'problems'].each do |dir_name|
@@ -10,4 +10,4 @@ end
 
 ALERTER = ConsoleAlerter.new
 
-IRB.start
+binding.pry
