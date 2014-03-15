@@ -2,6 +2,8 @@ class AbstractSequenceGenerator
 
   def initialize
     @generator = Enumerator.new(&self.class.initialization_block).lazy
+
+    @results = []
     @index = 0
   end
 
@@ -14,12 +16,16 @@ class AbstractSequenceGenerator
   end
 
   def number(n)
-    self.take(n + 1).find.with_index { |elem, i| i == n }
+    @results[n] ||= self.take(n + 1).find.with_index { |elem, i| i == n }
   end
   alias_method :[], :number
 
   def next
     @index += 1
+    current
+  end
+
+  def current
     number(@index)
   end
 

@@ -52,20 +52,21 @@ class Problem
       @time = Benchmark.measure do
         @result = solution
       end
+      alert_computation_status
     end.run
     alert_computation_status
   end
 
   def computation_status
     if @computation.is_a? Thread
-      @computation.alive? ? 'started' : 'completed'
+      (!@result && @computation.alive?) ? 'started' : 'completed'
     else
       'not started'
     end
   end
 
   def alert_computation_status
-    message = "Computation for #{ self.inspect } has been #{ computation_status }."
+    message = "Computation for Problem #{ @number } '#{ @name }' has been #{ computation_status }."
     ALERTER.report message
   end
 
